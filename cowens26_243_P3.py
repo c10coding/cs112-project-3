@@ -20,7 +20,6 @@ def dif_fibcumsum(n):
 
     fib = 0
     fib2 = 1
-    count = 0
     sumn = 0
 
     # Finds the fib and the sum
@@ -28,7 +27,6 @@ def dif_fibcumsum(n):
         fibn = fib + fib2
         fib = fib2
         fib2 = fibn
-        count += 1
         sumn += n
         n -= 1
 
