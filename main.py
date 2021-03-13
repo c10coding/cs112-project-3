@@ -101,3 +101,20 @@ def sales_sort(cakes, sales):
 
     return cakes
 
+def dif_sales(cakes, sales):
+    dif_list = []
+
+    appearance_count = 1
+    for i in range(len(sales)):
+        for x in range(len(sales)):
+            if i != x:
+                if sales[i] == sales[x]:
+                    appearance_count += 1
+        if appearance_count == 1:
+            dif_list.append(cakes[i])
+        else:
+            appearance_count = 1
+    return dif_list
+
+
+
