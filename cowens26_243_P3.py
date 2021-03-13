@@ -1,3 +1,39 @@
+# -------------------------------------------------------------------------------
+# Name: Caleb Owens
+# G#: G01210280
+# Project 3
+# Due Date: 3/14/2021
+# -------------------------------------------------------------------------------
+# Honor Code Statement: I received no assistance on this assignment that
+# violates the ethical guidelines set forth by professor and class syllabus.
+# -------------------------------------------------------------------------------
+# References: Lots of StackOverflow
+# -------------------------------------------------------------------------------
+# Comments and assumptions: N/A
+# -------------------------------------------------------------------------------
+# NOTE: width of source code should be <=80 characters to be readable on-screen.
+# 2345678901234567890123456789012345678901234567890123456789012345678901234567890
+# 10 20 30 40 50 60 70 80
+# -------------------------------------------------------------------------------
+
+def dif_fibcumsum(n):
+
+    fib = 0
+    fib2 = 1
+    count = 0
+    sumn = 0
+
+    # Finds the fib and the sum
+    for i in range(n):
+        fibn = fib + fib2
+        fib = fib2
+        fib2 = fibn
+        count += 1
+        sumn += n
+        n -= 1
+
+    return abs(fib - sumn)
+
 def dif_oddsumcount(n):
     if n == 0:
         return 0
@@ -16,8 +52,9 @@ def dif_oddsumcount(n):
 
 
 def is_promotion(cake, promotions):
+    # If any of the strings in promotions match cake, then it returns True. If the for loop does it's thing and doesn't return True, it just returns false afterwards.
     for str in promotions:
-        if (cake == str):
+        if cake == str:
             return True
     return False
 
@@ -47,7 +84,6 @@ def biggest_sale(cakes, sales, flavor_cakes):
 
 
 def marble_cakes(flavor, flavor_cakes):
-
     valid_flavor_cakes = flavor_cakes
     should_add_flavor = True
     # If flavor_cakes doesn't have flavor, then it adds it to the valid list so that I can just deal with 1 list instead of a list and a separate entity
@@ -64,8 +100,8 @@ def marble_cakes(flavor, flavor_cakes):
         num_combinations += len(valid_flavor_cakes)
     return num_combinations
 
-def get_cakewithtopping(cake, toppings):
 
+def get_cakewithtopping(cake, toppings):
     combinations = []
     if len(toppings) == 0:
         return combinations
@@ -82,8 +118,8 @@ def get_cakewithtopping(cake, toppings):
 
     return combinations
 
-def sales_sort(cakes, sales):
 
+def sales_sort(cakes, sales):
     if len(cakes) == 0 or len(sales) == 0:
         return []
     else:
@@ -101,9 +137,9 @@ def sales_sort(cakes, sales):
 
     return cakes
 
+
 def dif_sales(cakes, sales):
     dif_list = []
-
     appearance_count = 1
     for i in range(len(sales)):
         for x in range(len(sales)):
@@ -115,6 +151,3 @@ def dif_sales(cakes, sales):
         else:
             appearance_count = 1
     return dif_list
-
-
-
