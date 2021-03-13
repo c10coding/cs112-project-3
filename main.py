@@ -63,3 +63,41 @@ def marble_cakes(flavor, flavor_cakes):
         valid_flavor_cakes.pop()
         num_combinations += len(valid_flavor_cakes)
     return num_combinations
+
+def get_cakewithtopping(cake, toppings):
+
+    combinations = []
+    if len(toppings) == 0:
+        return combinations
+    else:
+        for topping in toppings:
+            combination = cake + "-" + topping
+            should_add_combination = True
+            # If the combination is in the list of combinations, then it won't get added because it's a duplicate
+            for comb in combinations:
+                if combination == comb:
+                    should_add_combination = False
+            if should_add_combination:
+                combinations.append(cake + "-" + topping)
+
+    return combinations
+
+def sales_sort(cakes, sales):
+
+    if len(cakes) == 0 or len(sales) == 0:
+        return []
+    else:
+        for i in range(len(sales)):
+            for x in range(i + 1, len(sales), 1):
+                tmp = 0
+                tmp2 = ""
+                if sales[i] < sales[x]:
+                    tmp = sales[i]
+                    tmp2 = cakes[i]
+                    sales[i] = sales[x]
+                    cakes[i] = cakes[x]
+                    sales[x] = tmp
+                    cakes[x] = tmp2
+
+    return cakes
+
