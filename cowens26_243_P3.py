@@ -18,19 +18,20 @@
 
 def dif_fibcumsum(n):
 
-    fib = 0
+    sum_natural_numbers = 0
+
+    fib1 = 0
     fib2 = 1
-    sumn = 0
 
     # Finds the fib and the sum
     for i in range(n):
-        fibn = fib + fib2
-        fib = fib2
+        fibn = fib1 + fib2
+        fib1 = fib2
         fib2 = fibn
-        sumn += n
+        sum_natural_numbers += n
         n -= 1
 
-    return abs(fib - sumn)
+    return abs(fib1 - sum_natural_numbers)
 
 def dif_oddsumcount(n):
     if n == 0:
