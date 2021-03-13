@@ -44,3 +44,22 @@ def biggest_sale(cakes, sales, flavor_cakes):
                 return "single"
 
         return "marble"
+
+
+def marble_cakes(flavor, flavor_cakes):
+
+    valid_flavor_cakes = flavor_cakes
+    should_add_flavor = True
+    # If flavor_cakes doesn't have flavor, then it adds it to the valid list so that I can just deal with 1 list instead of a list and a separate entity
+    for currentFlavor in flavor_cakes:
+        if currentFlavor == flavor:
+            should_add_flavor = False
+
+    if should_add_flavor:
+        valid_flavor_cakes.append(flavor)
+
+    num_combinations = 0
+    for i in range(len(valid_flavor_cakes)):
+        valid_flavor_cakes.pop()
+        num_combinations += len(valid_flavor_cakes)
+    return num_combinations
